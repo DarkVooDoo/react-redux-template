@@ -5,11 +5,7 @@ export default class Nav extends Component {
     render() {
         return (
             <nav>
-              <ul>
-                  <li><Link to="/about">About</Link></li>
-                  <li>Another</li>
-                  <li>Less</li>
-              </ul>  
+              <Link to="/About">About</Link>
             </nav>
         )
     }
