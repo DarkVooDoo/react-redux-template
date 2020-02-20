@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
 
-export default class About extends Component {
+
+class About extends Component {
     render() {
         return (
             <div>
@@ -8,4 +10,12 @@ export default class About extends Component {
             </div>
         )
     }
+
+    
 }
+
+const mapStateToProps = state=>({
+    name: state.default
+})
+
+export default connect(mapStateToProps,{})(About)
