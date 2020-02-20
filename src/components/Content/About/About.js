@@ -1,21 +1,16 @@
 import React, { Component } from 'react'
-import {connect} from 'react-redux'
 
+import AboutHeader from './AboutHeader'
+import AboutContent from './AboutContent' 
+import './about.css'
 
-class About extends Component {
+export default class About extends Component {
     render() {
         return (
-            <div>
-                <h2>This is the about page</h2>
+            <div className="about">
+                <AboutHeader />
+                <AboutContent/>
             </div>
         )
     }
-
-    
 }
-
-const mapStateToProps = state=>({
-    name: state.default
-})
-
-export default connect(mapStateToProps,{})(About)
