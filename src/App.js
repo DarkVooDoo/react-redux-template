@@ -35,6 +35,7 @@ function App() {
               <li className="mobile__nav__list__item"><Link to="#"><img className="mobile__nav__svg" src={favorite} alt=""/></Link></li>
           </ul>
       </div>
+      <div id="App__blurry"></div>
     </div>
     </Router>
   );

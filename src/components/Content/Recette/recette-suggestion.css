@@ -8,17 +8,28 @@
 .recetteInfo__suggestion__head{
     position: relative;
     padding: 3%;
+    height: 10vh;
 }
 
 .recetteInfo__suggestion__head::after{
     content: '';
     position: absolute;
     top: 0%;
-    left: 0;
+    left: 0%;
     width: 100%;
-    border: 1px solid var(--s-color)
+    border: 1px solid var(--s-color);
 }
 
+.recetteInfo__suggestion__head__arrow{
+    position: absolute;
+    top: 0;
+    right: 2%;
+    width: 3vh;
+    height: 100%;
+    background: url('../../../public/images/right-arrow.svg') no-repeat center;
+    background-size: contain;
+    transition: all 400ms;
+}
 
 .recetteInfo__suggestion__carousel{
     position: relative;
@@ -102,6 +113,14 @@
 
     .recetteInfo__suggestion{
         grid-area: s;
+    }
+
+    .recetteInfo__suggestion__head::after{
+        display: none;
+    }
+
+    .recetteInfo__suggestion__head__arrow{
+        display: none;
     }
 
     .recetteInfo__suggestion__carousel__card__image{

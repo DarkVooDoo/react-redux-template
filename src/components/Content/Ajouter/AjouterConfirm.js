@@ -3,12 +3,12 @@ import './ajouter-confirm.css'
 
 import { connect } from 'react-redux';
 
-let xhr = new XMLHttpRequest();
+//let xhr = new XMLHttpRequest();
 
 class AjouterConfirm extends Component {
 
     render() {
-        if(this.props.page !== 3){
+        if(this.props.page !== 4){
             return null
         }
         let ingredientItem = this.props.iList.map((ele,index)=>(

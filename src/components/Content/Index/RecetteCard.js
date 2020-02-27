@@ -1,26 +1,37 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 import './recette-card.css'
 import pizza from '../../../public/images/pizza.jpg'
 import clock from '../../../public/images/clock.svg'
 
-export default class RecetteCard extends Component {
+class RecetteCard extends Component {
 
     constructor(props){
         super(props)
-        this.state = {}
+        this.state = {show: false}
+    }
+
+    componentDidMount(){
+
     }
 
     render() {
 
+        let show = true;
+        if(window.outerWidth < 1100){
+            let currentPos = Math.abs(this.props.pos / 100)
+            if(currentPos !== this.props.recetteid) show = false
+            else show = true
+        }
+
         return (
-            <div className="recette__card">
-                <h1 className="recette__card__name">Nom De La Recette</h1>
+            <div className="recette__card" style={show ? {transform: "scale(1)"}: {transform: "scale(0)"}}>
+                <h1 className="recette__card__name">{this.props.recetteid+1} Nom De La Recette</h1>
                 <div className="recette__card__image">
                     <img src={pizza} alt=""/>
                 </div>
                 <div className="recette__card__ingredient">
-                    <Link className="reccete__card__lien" to={"/Recette/"+this.props.recetteid} data-rid="1"></Link>
+                    <a className="reccete__card__lien" href={"/Recette/"+this.props.recetteid}> </a>
                     <ul className="recette__card__ingredientList">
                         <h4 className="recette__card__ingredientList__option">Ingredients</h4>
                         <li className="recette__card__ingredientList__item">Ingredient 1</li>
@@ -48,3 +59,9 @@ export default class RecetteCard extends Component {
         )
     }
 }
+
+const mapStateToProps = state=>({
+    pos: state.carouselPos
+})
+
+export default connect(mapStateToProps, {})(RecetteCard)

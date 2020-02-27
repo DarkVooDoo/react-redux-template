@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import AjouterIngredients from './AjouterIngredients'
 import AjouterStep from './AjouterStep'
 import AjouterDescription from './AjouterDescription'
+import AjouterImage from './AjouterImage'
 import AjouterConfirm from './AjouterConfirm'
 
 import './ajouter-form.css'
@@ -25,6 +26,7 @@ class AjouterForm extends Component {
                 <AjouterIngredients />
                 <AjouterStep  />
                 <AjouterDescription />
+                <AjouterImage />
                 <AjouterConfirm />
                 <div className="ajouter__form__buttons">
                     {back}
@@ -35,7 +37,7 @@ class AjouterForm extends Component {
     }
 
     isLast = ()=>{
-        if(this.props.page === 3) return ""
+        if(this.props.page === 4) return ""
         else {
             return (
                 <button className="ajouter__form__btn" onClick={this.nextComponent}>Next</button>
@@ -58,7 +60,7 @@ class AjouterForm extends Component {
     }
 
     nextComponent = (e)=>{
-        if(this.props.page < 4){
+        if(this.props.page < 5){
             let index = this.props.page+1
             if(index === 4) {
                 this.setState({page: this.props.page+1})

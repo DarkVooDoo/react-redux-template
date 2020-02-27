@@ -7,14 +7,9 @@ import {descriptionUpdate} from '../../../redux/actions/ajouterFormActions'
 
 class AjouterDescription extends Component {
 
-    constructor(props){
-        super(props)
-        this.state = {}
-    }
-
     render() {
         if(this.props.page !== 2){
-            return ""
+            return null
         }
         let somethingOn = ''
         if(this.props.description) somethingOn = 'descriptionOn'
@@ -25,7 +20,7 @@ class AjouterDescription extends Component {
                 <div className="ajouter__form__description__textarea">
                     <textarea spellCheck="false" name="description" id="description"
                     onChange={this.descriptionChange} value={this.props.description}></textarea>
-                    <label htmlFor="description" className={somethingOn, this.props.description ? 'descriptionOn': ''} ref={ele=>this.descriptionLabel=ele}>Ecrire quelque chose sur la recette</label>
+                    <label htmlFor="description" className={this.props.description ? 'descriptionOn': ''} ref={ele=>this.descriptionLabel=ele}>Ecrire quelque chose sur la recette</label>
                 </div>
             </div>
         )
@@ -36,11 +31,6 @@ class AjouterDescription extends Component {
         this.props.descriptionUpdate(e.target.value)
         if(e.target.value) this.descriptionLabel.classList.add('descriptionOn')
         else this.descriptionLabel.classList.remove('descriptionOn')
-    }
-
-    somethingOn = (e)=>{
-        if(e.target.value) this.descriptionLabel.classList.add('descriptionOn')
-        else this.descriptionLabel.classList.remove('descriptionOn') 
     }
 }
 

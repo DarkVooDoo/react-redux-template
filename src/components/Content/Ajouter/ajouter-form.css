@@ -176,7 +176,7 @@ input:focus, button:focus{
 
 
     .ajouter__form{
-        width: 50%;
+        width: 40%;
         margin: 0 auto;
     }
 
@@ -209,6 +209,10 @@ input:focus, button:focus{
 
     .ajouter__form__recap__list__name{
         font-size: 1.3rem;
+    }
+
+    .ajouter__form__buttons{
+        margin: 0 5%;
     }
 
     .ajouter__form__btn, .back__form__btn, .validationColor{

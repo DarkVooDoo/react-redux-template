@@ -10,7 +10,7 @@ export default class Category extends Component {
             <div className="categorie">
                 <CategoryCard img={boeuf}/>
                 <CategoryCard img={chicken}/>
-            </div>
+            </div> 
         )
     }
 }

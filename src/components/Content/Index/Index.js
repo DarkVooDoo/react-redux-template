@@ -1,51 +1,50 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
 
 import RecetteCard from './RecetteCard'
+import {carouselPos} from '../../../redux/actions/ajouterFormActions'
 
-import apple from '../../../public/images/005-apple.svg'
-import pizza from '../../../public/images/003-pizza.svg'
-import coffee from '../../../public/images/002-coffee-cup.svg'
-import fish from '../../../public/images/004-fish.svg'
-import dish from '../../../public/images/001-dish.svg'
-import burger from '../../../public/images/006-burger.svg'
+import imageBanner from '../../../public/images/bannerImage.png'
 
 let ids = ['1','2','3', '4']
 
-
-export default class Index extends Component {
-
-    constructor(props){
-        super(props)
-        this.state = {
-            svg1: this.getRandomInt(),
-            svg2: this.getRandomInt(),
-            svg3: this.getRandomInt(),
-            svg4: this.getRandomInt(),
-            svg5: this.getRandomInt(),
-            svg6: this.getRandomInt()
-
-            
-        }
-    }
-
-    getRandomInt() {
-        let pos = [];
-        pos.push(Math.floor(Math.random() * Math.floor(90)))
-        pos.push(Math.floor(Math.random() * Math.floor(90)))
-        return pos
-    }
+class Index extends Component {
 
     render() {
         let recettes = ids.map((ele,index) =><RecetteCard key={index} recetteid={index}/>)
 
         return (
-            <div className="recette">
-                <header ref={ele=>this.indexHeader=ele}>
-                    <div id="parallax1"></div>
-                    <div id="parallax2"></div>
-                </header>
-                {recettes}
+            <div className="recette" onScroll={this.indexScroll}>
+                <div className="recette__banner">
+                    <div className="recette__banner__btn">
+                        <h3>Mes Recettes</h3>
+                    </div>
+                    <div className="recette__banner__image">
+                        <img src={imageBanner} alt="banner"/>
+                    </div>
+                </div>
+                <div className="recette__carousel">
+                    <span id="left" onClick={this.leftCarouselBtn}></span>
+                    <span id="right" onClick={this.rightCarouselBtn}></span>
+                    <div className="recette__carousel__inner" style={{left: this.props.pos+'%'}}>
+                        {recettes}
+                    </div>
+                </div>
             </div>
         )
     }
+
+    rightCarouselBtn = (e)=>{
+        if(this.props.pos > -300) this.props.carouselPos(this.props.pos - 100)
+    }
+
+    leftCarouselBtn = (e)=>{
+        if(this.props.pos < 0) this.props.carouselPos(this.props.pos + 100)
+    }
 }
+
+const mapStateToProps = state=>({
+    pos: state.carouselPos
+})
+
+export default connect(mapStateToProps, {carouselPos})(Index)

@@ -71,7 +71,7 @@
     
     .recetteInfo__container__viewImage__image{
         position: absolute;
-        top: 30%;
+        top: 15%;
         left: 50%;
         transform: translateX(-50%);
         height: 50vh;
@@ -177,7 +177,7 @@
     
 
     .recetteInfo__container__viewImage__image{
-        top: 15%;
+        top: 5%;
         height: 70vh;
         width: 70vh;
     }

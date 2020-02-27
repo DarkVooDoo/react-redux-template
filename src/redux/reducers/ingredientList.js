@@ -1,4 +1,4 @@
-import {INGREDIENT_LIST, UPDATE_STEP_LIST} from '../actions/types'
+import {INGREDIENT_LIST} from '../actions/types'
 
 export default (state = [], action)=>{
 

@@ -22,7 +22,7 @@ export default class Nav extends Component {
                     <img src={menuBtn} alt="menu btn"/>
                 </div>
                 <ul className="navMenuList" ref={(ele)=> this.navmenulist = ele}>
-                    <li className="navMenuList__item" onClick={this.menuButton}><Link to="/">Link</Link></li>
+                    <li className="navMenuList__item" onClick={this.menuButton}><Link to="/">Home</Link></li>
                     <li className="navMenuList__item" onClick={this.menuButton}><Link to="/Categories">Category</Link></li>
                     <li className="navMenuList__item" onClick={this.menuButton}><Link to="/Ajouter">Ajouter</Link></li>
                     <li className="navMenuList__item" onClick={this.menuButton}><Link to="/About">About</Link></li>
