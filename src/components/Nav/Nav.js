@@ -3,8 +3,7 @@ import {Link} from 'react-router-dom'
 import '../../App.css'
 
 import menuBtn from '../../public/images/menu.svg'
-import icon  from '../../public/images/cook.svg'
-
+import logo from '../../public/images/star.svg'
 
 export default class Nav extends Component {
 
@@ -17,7 +16,7 @@ export default class Nav extends Component {
     render() {
         return (
             <nav>
-                <h2 id="logo"><Link to="/" onClick={this.menuButton} id="logo-lien"><img src={icon} alt=""/></Link></h2>
+                <h2 id="logo"><Link to="/" onClick={this.menuButton} id="logo-lien"><img src={logo} alt=""/></Link></h2>
                 <div className="navMenuList__btn" onClick={this.menuButton}>
                     <img src={menuBtn} alt="menu btn"/>
                 </div>
