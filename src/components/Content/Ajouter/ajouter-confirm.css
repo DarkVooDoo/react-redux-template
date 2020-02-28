@@ -1,0 +1,86 @@
+
+.ajouter__form__box__confirm{
+    position: relative;
+}
+
+.ajouter__form__box__confirm__ingredientList, .ajouter__form__box__confirm__stepList{
+    font-size: 1.5rem;
+    list-style: decimal;
+    list-style-position: inside;
+}
+
+.ajouter__form__box__confirm__name,.ajouter__form__box__confirm__ingredientList__name,
+.ajouter__form__box__confirm__stepList__name, .ajouter__form__box__confirm__description__name{
+    text-align: center;
+    margin: 5%;
+}
+
+.ajouter__form__box__confirm__ingredientList__name, .ajouter__form__box__confirm__stepList__name,
+.ajouter__form__box__confirm__description__name{
+    font-size: 1.8rem;
+}
+
+.ajouter__form__box__confirm__description{
+    margin-bottom: 5%;
+}
+
+.ajouter__form__box__confirm__description__text{
+    font-size: 1.5rem;
+}
+
+.validationColor{
+    position: absolute;
+    right: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    width: 20vw;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    border: 1px solid #2BC016;
+    color: black;
+    z-index: 1;
+    background-color: #2BC016;
+}
+
+
+@media only screen and (min-width: 768px){
+
+    .ajouter__form__box__confirm__name{
+        font-size: 3rem;
+    }
+
+    .ajouter__form__box__confirm__ingredientList__name, .ajouter__form__box__confirm__stepList__name{
+        font-size: 2.5rem;
+    }
+
+    .ajouter__form__box__confirm__ingredientList, .ajouter__form__box__confirm__stepList,
+    .ajouter__form__box__confirm__description__text{
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1100px){
+    .ajouter__form__box__confirm__name{
+        font-size: 1.5rem;
+    }
+
+    .ajouter__form__box__confirm__ingredientList__name, .ajouter__form__box__confirm__stepList__name{
+        font-size: 1.2rem;
+    }
+
+    .ajouter__form__box__confirm__ingredientList, .ajouter__form__box__confirm__stepList,
+    .ajouter__form__box__confirm__description__text{
+        font-size: 1rem;
+    }
+
+    .validationColor{
+        background-color: white;
+        transition: all 500ms;
+    }
+
+    .validationColor:hover{
+        background-color: #2BC016;
+    }
+}

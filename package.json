@@ -12,7 +12,12 @@
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.1",
+<<<<<<< HEAD
     "redux": "^4.0.5"
+=======
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+>>>>>>> 1c9419ff6d90f73afb19f5d5b71f8dbdbe240f27
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,0 +1,185 @@
+
+.recetteInfo__container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin: 5% 0;
+}
+
+.recetteInfo__container__recette{
+    grid-column-end: span 12;
+    order: 2;
+    padding: 0 5%;
+}
+
+.recetteInfo__container__recette__name{
+    text-align: center;
+    margin: 3% 0;
+}
+
+.recetteInfo__container__recette__ingredientList{
+    margin: 5% 0;
+    overflow: hidden;
+}
+
+.recetteInfo__container__recette__ingredientList__list, .recetteInfo__container__recette__suivreList__list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: decimal;
+    list-style-position: inside;
+    margin: 5% 0;
+}
+
+.recetteInfo__container__recette__suivreList__list__item, .recetteInfo__container__recette__ingredientList__list__item{
+    padding: 1vh 0;
+}
+
+.recetteInfo__container__recette__temps{
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 3% 0;
+}
+
+.recetteInfo__container__images{  
+    grid-column-end: span 12;
+    order: 1;
+    display: flex;
+    height: 30vh;
+}
+
+.recetteInfo__container__images__img{
+    cursor: pointer;
+    height: 100%;
+    width: calc(100% / 3)
+}
+
+.recetteInfo__container__viewImage{
+    display: none;
+}
+
+@media only screen and (min-width: 768px){
+
+    .recetteInfo__container__viewImage{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.800);
+        z-index: 2;
+    }
+    
+    .recetteInfo__container__viewImage__image{
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 50vh;
+        width: 50vh;
+    }
+    
+    .recetteInfo__container__viewImage__image__block{
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .recetteInfo__container__viewImage__image__block img{
+        height: 100%;
+        width: 100%;
+    }
+    
+    .recetteInfo__container__viewImage__image__block__close{
+        position: absolute;
+        top:-1.5vh;
+        right: -1.5vh;
+        width: 3vh;
+        height: 3vh;
+        cursor: pointer;
+    }
+    
+    .recetteInfo__container__viewImage__image__block__close img{
+        height: 100%;
+        width: 100%;
+    }
+
+    .recetteInfo__container__recette__name{
+        font-size: 2.5rem;
+    }
+
+    .recetteInfo__container__recette__ingredientList__list__haed, .recetteInfo__container__recette__suivreList__list__head{
+        font-size: 2.3rem;
+    }
+
+    .recetteInfo__container__recette__suivreList__list__item, .recetteInfo__container__recette__ingredientList__list__item{
+        font-size: 1.9rem;
+    }
+
+    .recetteInfo__container__recette__temps{
+        font-size: 2.2rem;
+    }
+}
+
+@media only screen and (min-width: 1100px){
+
+    .recetteInfo{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas: '. c c c c c c c . s s .'
+                             '. . . . . . . . . s s .';
+    }
+
+    .recetteInfo__container{
+        grid-area: c;
+    }
+
+    .recetteInfo__container__recette{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .recetteInfo__container__recette__name{
+        font-size: 1.7rem;
+        grid-column-end: span 12;
+    }
+
+    .recetteInfo__container__recette__ingredientList, .recetteInfo__container__recette__suivreList{
+        margin: 0;
+        grid-column-end: span 6;
+    }
+
+    .recetteInfo__container__recette__ingredientList__list__haed, .recetteInfo__container__recette__suivreList__list__head{
+        font-size: 1.5rem;
+    }
+
+    .recetteInfo__container__recette__temps{
+        position: relative;
+        font-size: 1rem;
+        grid-column-end: span 12;
+    }
+
+    .recetteInfo__container__recette__temps::after{
+        content: '';
+        position: absolute;
+        top: -1%;
+        left: 0;
+        width: 100%;
+        border: 1px solid rgb(160, 160, 160);
+    }
+    
+    .recetteInfo__container__images img{
+        width: calc(100% / 3);
+    }
+
+    .recetteInfo__container__recette__suivreList__list__item, .recetteInfo__container__recette__ingredientList__list__item{
+        font-size: 1.2rem;
+    }
+    
+
+    .recetteInfo__container__viewImage__image{
+        top: 5%;
+        height: 70vh;
+        width: 70vh;
+    }
+
+}

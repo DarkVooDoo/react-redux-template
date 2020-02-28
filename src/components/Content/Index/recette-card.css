@@ -1,0 +1,291 @@
+.recette{
+    position: relative;
+    width: 100%;
+}
+
+.recette__banner{
+    position: relative;
+    background-color: #FDCA40;
+    height: 50vh;
+    margin-bottom: 25%;
+}
+
+.recette__banner__btn h3{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    height: 5vh;
+    width: 45%;
+    padding: 5%;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: #0D65E6;
+    color: white;
+    font-family: 'Noto Sans', ;
+    transform: translate(-50%, -50%);
+
+}
+
+.recette__banner__image{
+    position: absolute;
+    bottom: -25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+}
+
+.recette__banner__image img{
+    height: 60%;
+    width: 100%;
+}
+
+.recette__carousel{
+    position: relative;
+    overflow: hidden;
+}
+
+#left,#right{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 3vh;
+    width: 3vh;
+    border: 1vh solid var(--s-color);
+    border-left: solid transparent;
+    border-top: solid transparent;
+    opacity: .7;
+    z-index: 1; 
+}
+
+#left{
+    transform: rotate(-225deg);
+    left: 2vh;
+}
+
+#right{
+    transform: rotate(-45deg);
+    right: 2vh;
+}
+
+.recette__carousel__inner{
+    position: relative;
+    display: flex;
+    width: calc(100% * 4);
+    transition: all 500ms;
+}
+
+.recette__card{
+    transition: all 500ms;
+    transform-origin: center;
+    width: 100%;
+}
+ 
+.recette__card__name, .recette__card__ingredient{
+    padding: 5%;
+}
+
+.recette__card__name{
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.recette__card__image{
+    height: 30vh;
+}
+
+.recette__card__image img{
+    width: 100%;
+    height: 100%;
+}
+
+.recette__card__ingredient{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    column-gap: 1%;
+}
+
+.reccete__card__lien{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+
+}
+
+.recette__card__ingredientList, .recette__card__ingredientList__steps{
+    margin: 4%;
+    list-style: decimal;
+    list-style-position: inside;
+}
+
+.recette__card__ingredientList__item, .recette__steps__step{
+    margin: 5% 0;
+}
+
+.recette__card__ingredientList__steps__name, .recette__card__ingredientList__option{
+    text-align: center;
+}
+
+.recette__card__ingredientList__item{
+    height: 4vh;
+    font-size: 1.1rem;
+}
+
+.recette__card__about{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 1vh 0;
+}
+
+.recette__card__about::after, .recette__card__about::before{
+    content: '';
+    position: absolute;
+    left: 0px;
+    width: 99%;
+    border: 1px solid rgb(184, 185, 180);
+}
+
+.recette__card__about::after{
+    top: 0;
+}
+
+.recette__card__about::before{
+    bottom: 0; 
+}
+
+.recette__card__about__prep{
+    display: flex;
+    align-items: center;
+    height: 4vh;
+}
+
+.prep__clock{
+    margin: 0 1%;
+    height: 100%;
+    width: 10%;
+}
+
+.recette__card__about__prep img{
+    height: 100%;
+    width: 100%;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+@media only screen and (min-width: 768px){
+
+    .recette__banner{
+        height: 70vh;
+    }
+
+    .recette__banner__btn h3{
+        width: 35%;
+        font-size: 1.7rem;
+    }
+
+    .recette__banner__image{
+        width: 80%;
+    }
+
+    .recette__card__name{
+        font-size: 2.5rem;
+    }
+
+    .recette__card__ingredientList__steps__name, .recette__card__ingredientList__option{
+        font-size: 2rem;
+    }
+
+    .recette__card__ingredientList__item, .recette__steps__step{
+        font-size: 2.2rem;
+    }
+
+    .recette__card__about__prep{
+        font-size: 1.9rem;
+    }
+}
+
+@media only screen and (min-width: 1100px){
+
+    .recette{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .recette__banner{
+        grid-column-end: span 12;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 7%;
+    }
+
+    .recette__banner__btn{
+        position: relative;
+        background-color: #F79824;
+        height: 100%;
+    }
+
+    .recette__banner__btn h3{
+        font-size: 1.2rem;
+        width: 30%;
+        height: 1vh;
+        padding: 3%;
+    }
+
+    .recette__banner__image{
+        left: 75%;
+        width: 45%;
+    }
+
+    .recette header{
+        height: 60vh;
+    }
+
+    .recette__carousel{
+        grid-column-end: span 12;
+        margin: 0 10%;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .recette__carousel__inner{
+        grid-column-end: span 12;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+
+    .recette__card{
+        grid-column-end: span 4;
+        margin: 3%;
+        transition: all 700ms;
+    }
+
+    .recette__card:hover{
+        box-shadow: 0 0 5px 0 black;
+        transform: scale(1.02);
+        border: 1px solid rgb(82, 81, 81);
+    }
+
+    .recette__card__name{
+        font-size: 1rem;
+    }
+
+    .recette__card__ingredientList__steps__name, .recette__card__ingredientList__option{
+        font-size: .9rem;
+    }
+
+    .recette__card__ingredientList__item, .recette__steps__step, .recette__card__about__prep{
+        font-size: .8rem;
+    }
+ 
+}

@@ -1,0 +1,146 @@
+
+.recetteInfo__suggestion{
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.recetteInfo__suggestion__head{
+    position: relative;
+    padding: 3%;
+    height: 10vh;
+}
+
+.recetteInfo__suggestion__head::after{
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    border: 1px solid var(--s-color);
+}
+
+.recetteInfo__suggestion__head__arrow{
+    position: absolute;
+    top: 0;
+    right: 2%;
+    width: 3vh;
+    height: 100%;
+    background: url('../../../public/images/right-arrow.svg') no-repeat center;
+    background-size: contain;
+    transition: all 400ms;
+}
+
+.recetteInfo__suggestion__carousel{
+    position: relative;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.recetteInfo__suggestion__carousel::-webkit-scrollbar{
+    display: none;
+}
+
+.recetteInfo__suggestion__carousel__inner{
+    display: flex;
+    width: calc(100% * 5);
+    position: relative;
+    transition: all 500ms;
+}
+
+.recetteInfo__suggestion__carousel__card{
+    width: 100%;
+}
+
+.recetteInfo__suggestion__carousel__card__image{
+    width: 100%;
+    height: 20vh;
+}
+
+.recetteInfo__suggestion__carousel__card__image img{
+    height: 100%;
+    width: 100%;
+}
+
+.recetteInfo__suggestion__carousel__card__name{
+    text-align: center;
+}
+
+.recetteInfo__suggestion__carousel__card__text{
+    margin: 3%;
+}
+
+@media only screen and (min-width: 768px){
+
+    .recetteInfo__suggestion__head{
+        font-size: 4rem;
+    }
+
+    .recetteInfo__suggestion__head::before{
+        width: 1%;
+    }
+
+    .recetteInfo__suggestion{
+        display: block;
+    }
+
+    .recetteInfo__suggestion__carousel__inner{
+        width: calc(50% * 5);
+    }
+
+    .recetteInfo__suggestion__carousel__card__image{
+        height: 30vh;
+    }
+
+    .recetteInfo__suggestion__carousel__card__image img{
+        height: 100%;
+        width: 100%;
+    }
+
+    .recetteInfo__suggestion__carousel__card__name{
+        text-align: center;
+        font-size: 2.5rem;
+        margin: 3% 0;
+    }
+
+    .recetteInfo__suggestion__carousel__card__text{
+        font-size: 2rem;
+        padding: 0 5%;
+    }
+}
+
+@media only screen and (min-width: 1100px){
+
+    .recetteInfo__suggestion{
+        grid-area: s;
+    }
+
+    .recetteInfo__suggestion__head::after{
+        display: none;
+    }
+
+    .recetteInfo__suggestion__head__arrow{
+        display: none;
+    }
+
+    .recetteInfo__suggestion__carousel__card__image{
+        height: 20vh;
+    }
+
+    .recetteInfo__suggestion__head{
+        font-size: 1.4rem;
+    }
+
+    .recetteInfo__suggestion__carousel__card__name{
+        font-size: 1.1rem;
+    }
+
+    .recetteInfo__suggestion__carousel__inner{
+        width: 100%;
+        display: block;
+    }
+
+    .recetteInfo__suggestion__carousel__card__text{
+        font-size: 1rem;
+    }
+}
